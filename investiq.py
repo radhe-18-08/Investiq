@@ -1,19 +1,23 @@
-#!/usr/bin/env python3
-"""
-InvestIQ — AI-Powered Investment Platform
-==========================================
-Run this file to launch the app in your browser.
+import streamlit as st
+import streamlit.components.v1 as components
 
-    python InvestIQ.py
+st.set_page_config(
+    page_title="InvestIQ",
+    page_icon="📈",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
 
-Then open: http://localhost:8080
-No external libraries needed — pure Python standard library.
-"""
-
-import http.server
-import socketserver
-import webbrowser
-import threading
+# Hide Streamlit default UI chrome
+st.markdown("""
+<style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .block-container {padding: 0 !important; max-width: 100%;}
+    .stApp {background: #04120a;}
+</style>
+""", unsafe_allow_html=True)
 
 HTML = """<!DOCTYPE html>
 <html lang="en">
@@ -871,36 +875,4 @@ loadQ();
 </body>
 </html>"""
 
-PORT = 8080
-
-class Handler(http.server.BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/html; charset=utf-8")
-        self.end_headers()
-        self.wfile.write(HTML.encode("utf-8"))
-
-    def log_message(self, format, *args):
-        pass  # Suppress request logs in terminal
-
-def open_browser():
-    import time
-    time.sleep(0.9)
-    webbrowser.open(f"http://localhost:{PORT}")
-
-if __name__ == "__main__":
-    print()
-    print("  ╔══════════════════════════════════════╗")
-    print("  ║   InvestIQ — Server Starting...      ║")
-    print(f"  ║   Open: http://localhost:{PORT}          ║")
-    print("  ║   Press Ctrl+C to stop               ║")
-    print("  ╚══════════════════════════════════════╝")
-    print()
-
-    threading.Thread(target=open_browser, daemon=True).start()
-
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        try:
-            httpd.serve_forever()
-        except KeyboardInterrupt:
-            print("\n  InvestIQ server stopped.")
+components.html(HTML, height=860, scrolling=False)
