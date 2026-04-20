@@ -209,6 +209,49 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .nav-btn.active{color:#2ecc71}
 .nav-btn svg{width:19px;height:19px}
 
+
+/* ── TRADE TAB ── */
+.trade-seg{display:flex;background:#0a2214;border-radius:10px;padding:3px;margin:0 16px 14px}
+.trade-seg-btn{flex:1;padding:8px 0;font-size:12px;font-weight:700;border:none;background:transparent;color:#3a6647;border-radius:8px;cursor:pointer;transition:all .2s}
+.trade-seg-btn.active{background:#2ecc71;color:#03100a}
+.stock-pick{margin:0 16px 12px}
+.stock-pick-label{font-size:11px;color:#3a6647;margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.stock-btn-row{display:flex;gap:8px;flex-wrap:wrap}
+.stock-btn{padding:7px 14px;border-radius:20px;border:1px solid #1a3a24;background:#071a0e;font-size:12px;font-weight:700;color:#5a8a6a;cursor:pointer;transition:all .2s}
+.stock-btn.active{background:#0a2a14;border-color:#2ecc71;color:#2ecc71}
+.trade-form{margin:0 16px 14px;background:#071a0e;border:1px solid #0f2a18;border-radius:14px;padding:14px 16px}
+.trade-stock-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.trade-price-row{display:flex;justify-content:space-between;margin-bottom:12px}
+.trade-price-label{font-size:11px;color:#3a6647}
+.trade-price-val{font-size:13px;font-weight:700;color:#d0e8d6}
+.qty-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.qty-row label{font-size:11px;color:#3a6647;width:70px;flex-shrink:0}
+.qty-btn{width:30px;height:30px;border-radius:50%;border:1px solid #1a3a24;background:#0a2214;color:#2ecc71;font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1}
+.qty-input{flex:1;background:#0a2214;border:1px solid #1a3a24;border-radius:8px;padding:6px 10px;font-size:14px;color:#e0f0e6;text-align:center;outline:none;width:60px}
+.trade-summary{background:#0a2214;border-radius:10px;padding:10px 12px;margin-bottom:14px}
+.trade-summary-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}
+.trade-summary-row:last-child{margin-bottom:0;border-top:1px solid #1a3a24;padding-top:5px;font-weight:700}
+.btn-buy{width:100%;background:#2ecc71;color:#03100a;border:none;border-radius:11px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn-buy:active{opacity:.85;transform:scale(.98)}
+.btn-sell-red{width:100%;background:#e74c3c;color:#fff;border:none;border-radius:11px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn-sell-red:active{opacity:.85;transform:scale(.98)}
+.trade-toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#0f3a1e;border:1px solid #2ecc71;border-radius:10px;padding:10px 20px;font-size:12px;color:#2ecc71;font-weight:700;display:none;z-index:999;white-space:nowrap}
+.trade-toast.sell-toast{background:#3a0e0e;border-color:#e74c3c;color:#e74c3c}
+/* ── REBALANCE ── */
+.rebal-card{margin:0 16px 12px;background:#071a0e;border:1px solid #0f2a18;border-radius:14px;padding:14px 16px}
+.rebal-row{display:flex;align-items:center;gap:8px;margin-bottom:11px}
+.rebal-ticker{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+.rebal-bars{flex:1}
+.rebal-label{display:flex;justify-content:space-between;font-size:10px;color:#3a6647;margin-bottom:3px}
+.rebal-track{height:6px;background:#0a2214;border-radius:3px;overflow:hidden;position:relative}
+.rebal-current{height:6px;border-radius:3px;transition:width .6s ease}
+.rebal-target-line{position:absolute;top:0;width:2px;height:6px;background:#fff;opacity:.5;border-radius:1px}
+.rebal-action{font-size:10px;font-weight:700;text-align:right;white-space:nowrap;flex-shrink:0;min-width:72px}
+.rebal-target-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.rebal-target-row label{font-size:11px;color:#3a6647;width:55px;flex-shrink:0}
+.rebal-target-row input[type=range]{flex:1;accent-color:#2ecc71}
+.rebal-target-row span{font-size:11px;font-weight:700;color:#d0e8d6;width:30px;text-align:right}
+
 /* ── QUIZ ── */
 .quiz-card{margin:0 16px 14px;background:#071a0e;border:1px solid #1a3a24;border-radius:14px;padding:14px 16px}
 .quiz-q{font-size:13px;color:#d0e8d6;font-weight:600;margin-bottom:12px;line-height:1.5}
@@ -319,6 +362,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="tabs">
     <div class="tab active" id="t-dash" onclick="switchTab('t-dash')">Dashboard</div>
     <div class="tab" id="t-hold" onclick="switchTab('t-hold')">Holdings</div>
+    <div class="tab" id="t-trade" onclick="switchTab('t-trade')">Trade</div>
     <div class="tab" id="t-risk" onclick="switchTab('t-risk')">Risk</div>
     <div class="tab" id="t-esg" onclick="switchTab('t-esg')">ESG</div>
     <div class="tab" id="t-learn" onclick="switchTab('t-learn')">Learn</div>
@@ -435,6 +479,125 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
     </div>
     <div style="height:20px"></div>
+  </div>
+
+
+  <!-- ─── TRADE ───────────────────────────────────── -->
+  <div class="scroll" id="tab-trade" style="display:none">
+    <div class="hero" style="padding-bottom:14px">
+      <div style="font-size:10px;color:#3a6647;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px">Stock Trading</div>
+      <div style="font-size:22px;font-weight:700;color:#e0f0e6;margin-bottom:3px">Buy &amp; Sell Stocks</div>
+      <div style="font-size:11px;color:#3a6647">UAE market hours: Sun–Thu 10:00 AM – 2:00 PM GST</div>
+    </div>
+
+    <!-- Buy / Sell toggle -->
+    <div class="trade-seg" id="trade-seg">
+      <button class="trade-seg-btn active" onclick="setTradeMode('buy')">Buy</button>
+      <button class="trade-seg-btn" onclick="setTradeMode('sell')">Sell</button>
+    </div>
+
+    <!-- Stock selector -->
+    <div class="stock-pick">
+      <div class="stock-pick-label">Select Stock</div>
+      <div class="stock-btn-row">
+        <button class="stock-btn active" onclick="selectStock('AAPL')">AAPL</button>
+        <button class="stock-btn" onclick="selectStock('MSFT')">MSFT</button>
+        <button class="stock-btn" onclick="selectStock('TSLA')">TSLA</button>
+        <button class="stock-btn" onclick="selectStock('META')">META</button>
+        <button class="stock-btn" onclick="selectStock('AMZN')">AMZN</button>
+        <button class="stock-btn" onclick="selectStock('GOOGL')">GOOGL</button>
+        <button class="stock-btn" onclick="selectStock('NVDA')">NVDA</button>
+        <button class="stock-btn" onclick="selectStock('JPM')">JPM</button>
+        <button class="stock-btn" onclick="selectStock('BAC')">BAC</button>
+        <button class="stock-btn" onclick="selectStock('NFLX')">NFLX</button>
+        <button class="stock-btn" onclick="selectStock('BABA')">BABA</button>
+        <button class="stock-btn" onclick="selectStock('V')">V</button>
+        <button class="stock-btn" onclick="selectStock('DIS')">DIS</button>
+        <button class="stock-btn" onclick="selectStock('PYPL')">PYPL</button>
+        <button class="stock-btn" onclick="selectStock('UBER')">UBER</button>
+        <button class="stock-btn" onclick="selectStock('SHOP')">SHOP</button>
+        <button class="stock-btn" onclick="selectStock('EMAAR')">EMAAR</button>
+        <button class="stock-btn" onclick="selectStock('DIB')">DIB</button>
+        <button class="stock-btn" onclick="selectStock('ENBD')">ENBD</button>
+        <button class="stock-btn" onclick="selectStock('ADNOC')">ADNOC</button>
+      </div>
+    </div>
+
+    <!-- Trade form -->
+    <div class="trade-form">
+      <div class="trade-stock-header">
+        <div class="ticker t-bl" id="trade-ticker">AAPL</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#d0e8d6" id="trade-name">Apple Inc.</div>
+          <div style="font-size:11px;color:#3a6647" id="trade-exchange">NASDAQ · Stock only</div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <div style="font-size:18px;font-weight:700;color:#2ecc71" id="trade-price">AED 824.50</div>
+          <div style="font-size:10px;color:#2ecc71" id="trade-change">▲ +1.4% today</div>
+        </div>
+      </div>
+      <div class="trade-price-row">
+        <div><div class="trade-price-label">Bid</div><div class="trade-price-val" id="trade-bid">AED 823.80</div></div>
+        <div><div class="trade-price-label">Ask</div><div class="trade-price-val" id="trade-ask">AED 825.20</div></div>
+        <div><div class="trade-price-label">You own</div><div class="trade-price-val" id="trade-owned">12 shares</div></div>
+      </div>
+      <div class="qty-row">
+        <label>Quantity</label>
+        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+        <input class="qty-input" type="number" id="trade-qty" value="1" min="1" oninput="updateTradeSummary()">
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+      <div class="trade-summary">
+        <div class="trade-summary-row"><span style="color:#3a6647">Price per share</span><span id="ts-price" style="color:#d0e8d6">AED 824.50</span></div>
+        <div class="trade-summary-row"><span style="color:#3a6647">Quantity</span><span id="ts-qty" style="color:#d0e8d6">1 share</span></div>
+        <div class="trade-summary-row"><span style="color:#3a6647">Brokerage fee (0.1%)</span><span id="ts-fee" style="color:#d0e8d6">AED 0.82</span></div>
+        <div class="trade-summary-row"><span style="color:#d0e8d6">Total</span><span id="ts-total" style="color:#2ecc71">AED 825.32</span></div>
+      </div>
+      <div style="font-size:10px;color:#3a6647;margin-bottom:10px;text-align:center">Available balance: <span style="color:#2ecc71;font-weight:700" id="avail-balance">AED 12,400.00</span></div>
+      <button class="btn-buy" id="trade-action-btn" onclick="executeTrade()">Buy AAPL</button>
+    </div>
+
+    <!-- Recent trades -->
+    <div class="sec-head" style="margin-top:4px">Recent Trades</div>
+    <div style="margin:0 16px 14px" id="trade-history">
+      <div class="stat-card">
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #0f2a18">
+          <div><div style="font-size:13px;color:#d0e8d6">Bought AAPL</div><div style="font-size:10px;color:#3a6647;margin-top:2px">Apr 2, 2026 · 12 shares</div></div>
+          <div style="text-align:right"><div style="font-size:12px;font-weight:700;color:#e74c3c">−AED 9,882</div><div style="font-size:10px;color:#3a6647">AED 823.50/sh</div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #0f2a18">
+          <div><div style="font-size:13px;color:#d0e8d6">Sold TSLA</div><div style="font-size:10px;color:#3a6647;margin-top:2px">Mar 28, 2026 · 1 share</div></div>
+          <div style="text-align:right"><div style="font-size:12px;font-weight:700;color:#2ecc71">+AED 636</div><div style="font-size:10px;color:#3a6647">AED 636/sh</div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0">
+          <div><div style="font-size:13px;color:#d0e8d6">Bought META</div><div style="font-size:10px;color:#3a6647;margin-top:2px">Mar 22, 2026 · 1 share</div></div>
+          <div style="text-align:right"><div style="font-size:12px;font-weight:700;color:#e74c3c">−AED 2,060</div><div style="font-size:10px;color:#3a6647">AED 2,060/sh</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO REBALANCING -->
+    <div class="sec-head">Portfolio Rebalancing</div>
+    <div class="rebal-card">
+      <div style="font-size:12px;color:#5a8a6a;margin-bottom:14px;line-height:1.5">Set your target allocation for each stock. InvestIQ shows what to buy or sell to reach it.</div>
+      <div id="rebal-rows"></div>
+      <div style="border-top:1px solid #0f2a18;padding-top:12px;margin-top:4px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <div style="font-size:12px;color:#5a8a6a">Target allocation total</div>
+          <div style="font-size:14px;font-weight:700" id="rebal-total-pct">100%</div>
+        </div>
+        <button onclick="applyRebalance()" style="width:100%;background:#0a2a14;color:#2ecc71;border:1px solid #2ecc71;border-radius:11px;padding:11px;font-size:13px;font-weight:700;cursor:pointer">Generate Rebalance Plan</button>
+      </div>
+    </div>
+
+    <!-- Rebalance plan output -->
+    <div id="rebal-plan" style="display:none;margin:0 16px 16px">
+      <div class="sec-head" style="padding:0;margin-bottom:9px">Rebalance Actions</div>
+      <div class="stat-card" id="rebal-actions"></div>
+      <div style="font-size:10px;color:#3a6647;margin-top:8px;text-align:center;font-style:italic">Note: This is a suggestion only — not regulated financial advice.</div>
+    </div>
+
+    <div style="height:24px"></div>
   </div>
 
   <!-- ─── RISK MEASURER ────────────────────────── -->
@@ -678,6 +841,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M6 10h8M6 13.5h5M6 6.5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
       Holdings
     </button>
+    <button class="nav-btn" id="nb-trade" onclick="switchTab('t-trade')">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M5 14l3-4 3 3 4-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="7" r="1" fill="currentColor"/></svg>
+      Trade
+    </button>
     <button class="nav-btn" id="nb-risk" onclick="switchTab('t-risk')">
       <svg viewBox="0 0 20 20" fill="none"><path d="M10 2L2 17h16L10 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 8v4M10 14v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
       Risk
@@ -870,6 +1037,209 @@ function answerQ(el,correct){
   if(sc)sc.textContent='Score: '+correct_count+' / '+answered;
 }
 function nextQ(){qi++;loadQ();}
+
+// ── TRADE ──────────────────────────────────────────────
+var STOCKS={
+  AAPL:{name:'Apple Inc.',       price:824.50, change:'+1.4%', pos:true,  owned:12,col:'t-bl',bid:823.80,  ask:825.20,  mkt:'NASDAQ'},
+  MSFT:{name:'Microsoft Corp.',  price:1260.00,change:'+0.8%', pos:true,  owned:8, col:'t-gr',bid:1259.00, ask:1261.00, mkt:'NASDAQ'},
+  TSLA:{name:'Tesla Inc.',       price:612.00, change:'-2.1%', pos:false, owned:5, col:'t-am',bid:611.20,  ask:612.80,  mkt:'NASDAQ'},
+  META:{name:'Meta Platforms',   price:2180.00,change:'+2.7%', pos:true,  owned:3, col:'t-pi',bid:2179.00, ask:2181.00, mkt:'NASDAQ'},
+  AMZN:{name:'Amazon.com Inc.',  price:3320.00,change:'+1.1%', pos:true,  owned:0, col:'t-am',bid:3318.50, ask:3321.50, mkt:'NASDAQ'},
+  GOOGL:{name:'Alphabet Inc.',   price:7050.00,change:'+0.5%', pos:true,  owned:0, col:'t-bl',bid:7048.00, ask:7052.00, mkt:'NASDAQ'},
+  NVDA:{name:'NVIDIA Corp.',     price:4180.00,change:'+3.2%', pos:true,  owned:0, col:'t-gr',bid:4177.00, ask:4183.00, mkt:'NASDAQ'},
+  JPM:{name:'JPMorgan Chase',    price:1745.00,change:'+0.4%', pos:true,  owned:0, col:'t-bl',bid:1744.00, ask:1746.00, mkt:'NYSE'},
+  BAC:{name:'Bank of America',   price:420.00, change:'-0.3%', pos:false, owned:0, col:'t-am',bid:419.50,  ask:420.50,  mkt:'NYSE'},
+  NFLX:{name:'Netflix Inc.',     price:5580.00,change:'+1.8%', pos:true,  owned:0, col:'t-pi',bid:5578.00, ask:5582.00, mkt:'NASDAQ'},
+  BABA:{name:'Alibaba Group',    price:980.00, change:'-0.9%', pos:false, owned:0, col:'t-am',bid:979.00,  ask:981.00,  mkt:'NYSE'},
+  V:{name:'Visa Inc.',           price:2640.00,change:'+0.6%', pos:true,  owned:0, col:'t-gr',bid:2639.00, ask:2641.00, mkt:'NYSE'},
+  DIS:{name:'Walt Disney Co.',   price:1050.00,change:'-0.5%', pos:false, owned:0, col:'t-bl',bid:1049.00, ask:1051.00, mkt:'NYSE'},
+  PYPL:{name:'PayPal Holdings',  price:620.00, change:'-1.2%', pos:false, owned:0, col:'t-am',bid:619.00,  ask:621.00,  mkt:'NASDAQ'},
+  UBER:{name:'Uber Technologies',price:475.00, change:'+2.1%', pos:true,  owned:0, col:'t-gr',bid:474.20,  ask:475.80,  mkt:'NYSE'},
+  SHOP:{name:'Shopify Inc.',     price:1380.00,change:'+1.5%', pos:true,  owned:0, col:'t-pi',bid:1379.00, ask:1381.00, mkt:'NYSE'},
+  EMAAR:{name:'Emaar Properties',price:18.40,  change:'+0.8%', pos:true,  owned:0, col:'t-gr',bid:18.35,   ask:18.45,   mkt:'DFM'},
+  DIB:{name:'Dubai Islamic Bank',price:5.90,   change:'+0.3%', pos:true,  owned:0, col:'t-bl',bid:5.88,    ask:5.92,    mkt:'DFM'},
+  ENBD:{name:'Emirates NBD',     price:14.60,  change:'-0.2%', pos:false, owned:0, col:'t-am',bid:14.55,   ask:14.65,   mkt:'DFM'},
+  ADNOC:{name:'ADNOC Distribution',price:3.82, change:'+0.5%', pos:true,  owned:0, col:'t-pi',bid:3.80,    ask:3.84,    mkt:'ADX'},
+};
+var tradeMode='buy';
+var selStock='AAPL';
+var availBal=12400;
+
+function setTradeMode(mode){
+  tradeMode=mode;
+  document.querySelectorAll('.trade-seg-btn').forEach(function(b,i){b.classList.toggle('active',i===(mode==='buy'?0:1));});
+  updateTradeSummary();
+  var btn=document.getElementById('trade-action-btn');
+  btn.className=mode==='buy'?'btn-buy':'btn-sell-red';
+  btn.textContent=(mode==='buy'?'Buy ':'Sell ')+selStock;
+}
+
+function selectStock(sym){
+  selStock=sym;
+  document.querySelectorAll('.stock-btn').forEach(function(b){b.classList.toggle('active',b.textContent===sym);});
+  var st=STOCKS[sym];
+  document.getElementById('trade-ticker').textContent=sym;
+  document.getElementById('trade-ticker').className='ticker '+st.col;
+  document.getElementById('trade-name').textContent=st.name;
+  document.getElementById('trade-price').textContent='AED '+st.price.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  document.getElementById('trade-change').textContent=(st.pos?'▲ ':'▼ ')+st.change+' today';
+  document.getElementById('trade-change').style.color=st.pos?'#2ecc71':'#e74c3c';
+  document.getElementById('trade-bid').textContent='AED '+st.bid.toFixed(2);
+  document.getElementById('trade-ask').textContent='AED '+st.ask.toFixed(2);
+  document.getElementById('trade-owned').textContent=st.owned+' shares';
+  document.getElementById('trade-qty').value=1;
+  var btn=document.getElementById('trade-action-btn');
+  btn.textContent=(tradeMode==='buy'?'Buy ':'Sell ')+sym;
+  updateTradeSummary();
+}
+
+function changeQty(d){
+  var inp=document.getElementById('trade-qty');
+  var v=Math.max(1,parseInt(inp.value||1)+d);
+  inp.value=v;
+  updateTradeSummary();
+}
+
+function updateTradeSummary(){
+  var st=STOCKS[selStock];
+  var qty=Math.max(1,parseInt(document.getElementById('trade-qty').value)||1);
+  var price=tradeMode==='buy'?st.ask:st.bid;
+  var fee=price*qty*0.001;
+  var total=tradeMode==='buy'?price*qty+fee:price*qty-fee;
+  document.getElementById('ts-price').textContent='AED '+price.toFixed(2);
+  document.getElementById('ts-qty').textContent=qty+' share'+(qty>1?'s':'');
+  document.getElementById('ts-fee').textContent='AED '+fee.toFixed(2);
+  document.getElementById('ts-total').textContent='AED '+total.toFixed(2);
+  document.getElementById('ts-total').style.color=tradeMode==='buy'?'#e74c3c':'#2ecc71';
+  document.getElementById('avail-balance').textContent='AED '+availBal.toLocaleString('en-US',{minimumFractionDigits:2});
+  var btn=document.getElementById('trade-action-btn');
+  btn.textContent=(tradeMode==='buy'?'Buy ':'Sell ')+qty+' '+selStock+(qty>1?' shares':' share');
+}
+
+function executeTrade(){
+  var st=STOCKS[selStock];
+  var qty=Math.max(1,parseInt(document.getElementById('trade-qty').value)||1);
+  var price=tradeMode==='buy'?st.ask:st.bid;
+  var fee=price*qty*0.001;
+  var total=tradeMode==='buy'?price*qty+fee:price*qty-fee;
+  if(tradeMode==='sell'&&qty>st.owned){showToast('Not enough shares to sell.',true);return;}
+  if(tradeMode==='buy'&&total>availBal){showToast('Insufficient balance.',true);return;}
+  if(tradeMode==='buy'){st.owned+=qty;availBal-=total;}
+  else{st.owned-=qty;availBal+=total;}
+  document.getElementById('trade-owned').textContent=st.owned+' shares';
+  document.getElementById('avail-balance').textContent='AED '+availBal.toLocaleString('en-US',{minimumFractionDigits:2});
+  document.getElementById('trade-qty').value=1;
+  updateTradeSummary();
+  var action=tradeMode==='buy'?'Bought':'Sold';
+  showToast(action+' '+qty+' '+selStock+' · AED '+total.toFixed(2), tradeMode==='sell');
+  addTradeHistory(action,selStock,qty,total,tradeMode);
+}
+
+function showToast(msg,isSell){
+  var t=document.getElementById('global-toast');
+  if(!t){t=document.createElement('div');t.id='global-toast';t.className='trade-toast';document.body.appendChild(t);}
+  t.textContent=msg;
+  t.className='trade-toast'+(isSell?' sell-toast':'');
+  t.style.display='block';
+  setTimeout(function(){t.style.display='none';},2800);
+}
+
+function addTradeHistory(action,sym,qty,total,mode){
+  var hist=document.getElementById('trade-history');
+  var card=hist.querySelector('.stat-card');
+  var row=document.createElement('div');
+  row.style.cssText='display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid #0f2a18';
+  var today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+  row.innerHTML='<div><div style="font-size:13px;color:#d0e8d6">'+action+' '+sym+'</div><div style="font-size:10px;color:#3a6647;margin-top:2px">'+today+' · '+qty+' share'+(qty>1?'s':'')+'</div></div><div style="text-align:right"><div style="font-size:12px;font-weight:700;color:'+(mode==='buy'?'#e74c3c':'#2ecc71')+'">'+(mode==='buy'?'−':'+')+' AED '+total.toFixed(2)+'</div><div style="font-size:10px;color:#3a6647">'+STOCKS[sym].price.toFixed(2)+'/sh</div></div>';
+  card.insertBefore(row,card.firstChild);
+}
+
+// ── REBALANCING ─────────────────────────────────────────
+var REBAL_STOCKS=['AAPL','MSFT','TSLA','META'];
+var REBAL_VALS={AAPL:24100,MSFT:15840,TSLA:8380,META:8000};
+var REBAL_COLS={AAPL:'t-bl',MSFT:'t-gr',TSLA:'t-am',META:'t-pi'};
+var REBAL_COLORS={AAPL:'#3498db',MSFT:'#2ecc71',TSLA:'#f39c12',META:'#e91e8c'};
+var totalPort=Object.values(REBAL_VALS).reduce(function(a,b){return a+b;},0);
+
+function buildRebalRows(){
+  var container=document.getElementById('rebal-rows');
+  if(!container)return;
+  container.innerHTML='';
+  REBAL_STOCKS.forEach(function(sym){
+    var curPct=Math.round(REBAL_VALS[sym]/totalPort*100);
+    var row=document.createElement('div');
+    row.className='rebal-row';
+    row.innerHTML='<div class="rebal-ticker '+REBAL_COLS[sym]+'">'+sym+'</div>'
+      +'<div class="rebal-bars" style="flex:1">'
+        +'<div class="rebal-label"><span>'+sym+' · Current: '+curPct+'%</span><span id="rt-'+sym+'">Target: '+curPct+'%</span></div>'
+        +'<div class="rebal-track">'
+          +'<div class="rebal-current" id="rc-'+sym+'" style="width:'+curPct+'%;background:'+REBAL_COLORS[sym]+'"></div>'
+          +'<div class="rebal-target-line" id="rl-'+sym+'" style="left:'+curPct+'%"></div>'
+        +'</div>'
+        +'<div class="rebal-target-row" style="margin-top:6px">'
+          +'<label style="font-size:10px;color:#3a6647">Target %</label>'
+          +'<input type="range" min="0" max="80" value="'+curPct+'" step="1" id="rs-'+sym+'" oninput="updateRebal(''+sym+'')" style="flex:1;accent-color:'+REBAL_COLORS[sym]+'">'
+          +'<span id="rsv-'+sym+'" style="font-size:11px;font-weight:700;color:'+REBAL_COLORS[sym]+';width:30px;text-align:right">'+curPct+'%</span>'
+        +'</div>'
+      +'</div>';
+    container.appendChild(row);
+  });
+  updateRebalTotal();
+}
+
+function updateRebal(sym){
+  var val=parseInt(document.getElementById('rs-'+sym).value);
+  document.getElementById('rsv-'+sym).textContent=val+'%';
+  document.getElementById('rl-'+sym).style.left=val+'%';
+  var curPct=Math.round(REBAL_VALS[sym]/totalPort*100);
+  document.getElementById('rt-'+sym).textContent='Target: '+val+'%';
+  updateRebalTotal();
+}
+
+function updateRebalTotal(){
+  var tot=0;
+  REBAL_STOCKS.forEach(function(s){tot+=parseInt(document.getElementById('rs-'+s).value);});
+  var el=document.getElementById('rebal-total-pct');
+  if(el){el.textContent=tot+'%';el.style.color=tot===100?'#2ecc71':tot>100?'#e74c3c':'#f39c12';}
+}
+
+function applyRebalance(){
+  var actions=[];
+  REBAL_STOCKS.forEach(function(sym){
+    var targetPct=parseInt(document.getElementById('rs-'+sym).value)/100;
+    var targetVal=totalPort*targetPct;
+    var curVal=REBAL_VALS[sym];
+    var diff=targetVal-curVal;
+    var price=STOCKS[sym].price;
+    var shares=Math.round(Math.abs(diff)/price);
+    if(shares>0){
+      actions.push({sym:sym,action:diff>0?'Buy':'Sell',shares:shares,value:Math.abs(diff).toFixed(0),col:diff>0?'#2ecc71':'#e74c3c'});
+    }
+  });
+  var plan=document.getElementById('rebal-plan');
+  var actionsEl=document.getElementById('rebal-actions');
+  if(!actions.length){
+    plan.style.display='block';
+    actionsEl.innerHTML='<div style="padding:14px;text-align:center;font-size:13px;color:#2ecc71;font-weight:700">Portfolio is already balanced! No trades needed.</div>';
+    return;
+  }
+  plan.style.display='block';
+  actionsEl.innerHTML='<div style="display:flex;justify-content:space-between;padding:8px 12px;font-size:10px;color:#3a6647;border-bottom:1px solid #0f2a18"><span>Stock</span><span>Action</span><span>Est. Value</span></div>'
+    +actions.map(function(a){
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 12px;border-bottom:1px solid #071a0e">'
+        +'<div style="display:flex;align-items:center;gap:8px"><div class="ticker '+REBAL_COLS[a.sym]+'" style="width:30px;height:30px;font-size:8px">'+a.sym+'</div><span style="font-size:13px;color:#d0e8d6">'+a.sym+'</span></div>'
+        +'<span style="font-size:12px;font-weight:700;color:'+a.col+'">'+a.action+' '+a.shares+' share'+(a.shares>1?'s':'')+'</span>'
+        +'<span style="font-size:12px;color:'+a.col+'">AED '+parseInt(a.value).toLocaleString()+'</span>'
+        +'</div>';
+    }).join('')
+    +'<div style="padding:10px 12px;display:flex;justify-content:space-between;font-size:11px;color:#3a6647">'
+      +'<span>'+actions.length+' trade'+(actions.length>1?'s':'')+' needed</span>'
+      +'<span>Stocks only</span>'
+    +'</div>';
+}
+
+buildRebalRows();
+
 loadQ();
 </script>
 </body>
