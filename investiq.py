@@ -1080,6 +1080,9 @@ function answerQ(el,correct){
   var sc=document.getElementById('q-score');if(sc)sc.textContent='Score: '+correctCount+' / '+answered;
 }
 function nextQ(){qi++;loadQ();}
+[deployment]
+deploymentTarget = "autoscale"
+run = ["python3", "server.py"]
 
 document.querySelectorAll('.tf').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tf').forEach(function(x){x.classList.remove('active');});this.classList.add('active');});});
 
